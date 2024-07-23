@@ -230,3 +230,40 @@ body {
     transform: translate3d(0, 0, 0);
   }
 }
+
+/* ACCORDION LIST CSS */
+.js .js-accordion dd{
+  display: none;
+}
+
+/* Aplicada quando accordion está fechado */
+.js-accordion dt::after{
+  content: '⬎';
+  margin-left: 10px;
+}
+
+/* Aplicada quando accordion está aberto */
+.js-accordion dt.ativo::after{
+  content: '⬏';
+  margin-left: 10px;
+}
+
+/* Mostrando o conteúdo dd quando ativo */
+.js-accordion dd.ativo{
+  display: block;
+  -webkit-animation: slideDown .5s forwards;
+  animation: slideDown .5s forwards; /* forwards permite manter no estado final da animação*/
+}
+
+/* Criando a animação do accordion */
+@keyframes slideDown{
+  from{
+    opacity: 0;
+    max-height: 0;
+  }
+  to{
+    opacity: 1;
+    max-width: 65ch; /* max-height: define uma altura máxima,
+     mas se faz necessário saber o tamanho do conteúdo, pois senão pode quebrar o layout*/
+  }
+}
