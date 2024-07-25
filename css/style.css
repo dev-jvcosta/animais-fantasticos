@@ -267,3 +267,22 @@ body {
      mas se faz necessário saber o tamanho do conteúdo, pois senão pode quebrar o layout*/
   }
 }
+
+.js .js-scroll{
+  opacity: 0;
+  -webkit-transform: translate3d(-30px, 0, 0);
+  -moz-transform: translate3d(-30px, 0, 0);
+  -ms-transform: translate3d(-30px, 0, 0);
+  -o-transform: translate3d(-30px, 0, 0);
+  transform: translate3d(-30px, 0, 0);
+  transition: .3s;
+}
+
+.js .js-scroll.ativo{
+ opacity: 1;
+ -webkit-transform: translate3d(0, 0, 0);
+ -moz-transform: translate3d(0, 0, 0);
+ -ms-transform: translate3d(0, 0, 0);
+ -o-transform: translate3d(0, 0, 0);
+ transform: translate3d(0, 0, 0);
+}
