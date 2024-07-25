@@ -81,3 +81,22 @@ function initScrollSuave(){
   })
 }
 initScrollSuave();
+
+//ANIMAÇÃO AO SCROLL
+function initAnimacaoScroll(){
+  const sections = document.querySelectorAll('.js-scroll');
+  const windowMetade = window.innerHeight * 0.6;
+
+  function animaScroll(){
+    sections.forEach((section) => {
+      const sectionTop = section.getBoundingClientRect().top; // calcula distancia entre o elemento e o topo
+      const isSectionVisible = (sectionTop - windowMetade) < 0; // realizou o calculo e fez a validação
+      if (isSectionVisible) {
+        section.classList.add('ativo');
+      }
+    })
+  }
+
+  window.addEventListener("scroll", animaScroll); 
+}
+initAnimacaoScroll();
